@@ -1,0 +1,69 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXGroup section */
+		35567CA0155ADC420009815A = {
+			isa = PBXGroup;
+			children = (
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		35567CA2155ADC420009815A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = OKV;
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = "Romain Muller";
+			};
+			buildConfigurationList = 35567CA5155ADC420009815A /* Build configuration list for PBXProject "Objective-OpenKeyval" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 35567CA0155ADC420009815A;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		35567CA7155ADC430009815A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		35567CA8155ADC430009815A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		35567CA5155ADC420009815A /* Build configuration list for PBXProject "Objective-OpenKeyval" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				35567CA7155ADC430009815A /* Debug */,
+				35567CA8155ADC430009815A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 35567CA2155ADC420009815A /* Project object */;
+}
