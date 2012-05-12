@@ -7,15 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3544A2D0155B107E000295E6 /* OKVStore_private.h in Headers */ = {isa = PBXBuildFile; fileRef = 3544A2CF155B107E000295E6 /* OKVStore_private.h */; };
+		353EC752155EE705009D6A3B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 353EC751155EE705009D6A3B /* Cocoa.framework */; };
+		353EC76A155EE748009D6A3B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35556E21155AE4980074AA3F /* Foundation.framework */; };
+		353EC777155EE766009D6A3B /* example.m in Sources */ = {isa = PBXBuildFile; fileRef = 353EC749155EE6C7009D6A3B /* example.m */; };
+		353EC778155EE76E009D6A3B /* Objective-OpenKeyval.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 353EC750155EE705009D6A3B /* Objective-OpenKeyval.framework */; };
+		353EC780155EE962009D6A3B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 353EC77E155EE962009D6A3B /* InfoPlist.strings */; };
+		353EC781155EE9E4009D6A3B /* OKVStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 35556E2D155AE5100074AA3F /* OKVStore.m */; };
+		353EC782155EE9EE009D6A3B /* OKVStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 35556E2C155AE5100074AA3F /* OKVStore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		353EC783155EE9F8009D6A3B /* OKVStore_private.h in Headers */ = {isa = PBXBuildFile; fileRef = 3544A2CF155B107E000295E6 /* OKVStore_private.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		353EC784155EEA03009D6A3B /* OKVSerializable.h in Headers */ = {isa = PBXBuildFile; fileRef = 35556E32155AE6220074AA3F /* OKVSerializable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		353EC785155EEA08009D6A3B /* Objective-OpenKeyval.h in Headers */ = {isa = PBXBuildFile; fileRef = 35556E30155AE57D0074AA3F /* Objective-OpenKeyval.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3544A2D0155B107E000295E6 /* OKVStore_private.h in Headers */ = {isa = PBXBuildFile; fileRef = 3544A2CF155B107E000295E6 /* OKVStore_private.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		35556E22155AE4980074AA3F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35556E21155AE4980074AA3F /* Foundation.framework */; };
 		35556E2E155AE5100074AA3F /* OKVStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 35556E2C155AE5100074AA3F /* OKVStore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		35556E2F155AE5100074AA3F /* OKVStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 35556E2D155AE5100074AA3F /* OKVStore.m */; };
 		35556E31155AE57D0074AA3F /* Objective-OpenKeyval.h in Headers */ = {isa = PBXBuildFile; fileRef = 35556E30155AE57D0074AA3F /* Objective-OpenKeyval.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		35556E33155AE6220074AA3F /* OKVSerializable.h in Headers */ = {isa = PBXBuildFile; fileRef = 35556E32155AE6220074AA3F /* OKVSerializable.h */; };
+		35556E33155AE6220074AA3F /* OKVSerializable.h in Headers */ = {isa = PBXBuildFile; fileRef = 35556E32155AE6220074AA3F /* OKVSerializable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		353EC775155EE762009D6A3B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 35567CA2155ADC420009815A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 353EC74F155EE705009D6A3B;
+			remoteInfo = "Objective-OpenKeyval";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		353EC749155EE6C7009D6A3B /* example.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = example.m; sourceTree = "<group>"; };
+		353EC750155EE705009D6A3B /* Objective-OpenKeyval.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Objective-OpenKeyval.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		353EC751155EE705009D6A3B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		353EC759155EE705009D6A3B /* Objective-OpenKeyval-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Objective-OpenKeyval-Info.plist"; sourceTree = "<group>"; };
+		353EC768155EE748009D6A3B /* OKVExample */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OKVExample; sourceTree = BUILT_PRODUCTS_DIR; };
+		353EC77F155EE962009D6A3B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3544A2CF155B107E000295E6 /* OKVStore_private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OKVStore_private.h; sourceTree = "<group>"; };
 		35556E19155AE3A50074AA3F /* Objective-OpenKeyval-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Objective-OpenKeyval-Prefix.pch"; sourceTree = "<group>"; };
 		35556E1E155AE4980074AA3F /* libObjective-OpenKeyval-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libObjective-OpenKeyval-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -27,6 +53,23 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		353EC74C155EE705009D6A3B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				353EC752155EE705009D6A3B /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		353EC765155EE748009D6A3B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				353EC778155EE76E009D6A3B /* Objective-OpenKeyval.framework in Frameworks */,
+				353EC76A155EE748009D6A3B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		35556E1B155AE4980074AA3F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -38,6 +81,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		353EC747155EE6B2009D6A3B /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+				353EC749155EE6C7009D6A3B /* example.m */,
+			);
+			name = Examples;
+			path = src/Examples;
+			sourceTree = "<group>";
+		};
 		35556E15155AE2B40074AA3F /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +121,8 @@
 		35556E18155AE2EC0074AA3F /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				353EC759155EE705009D6A3B /* Objective-OpenKeyval-Info.plist */,
+				353EC77E155EE962009D6A3B /* InfoPlist.strings */,
 				35556E19155AE3A50074AA3F /* Objective-OpenKeyval-Prefix.pch */,
 				35556E30155AE57D0074AA3F /* Objective-OpenKeyval.h */,
 			);
@@ -80,6 +134,8 @@
 			isa = PBXGroup;
 			children = (
 				35556E1E155AE4980074AA3F /* libObjective-OpenKeyval-iOS.a */,
+				353EC750155EE705009D6A3B /* Objective-OpenKeyval.framework */,
+				353EC768155EE748009D6A3B /* OKVExample */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -88,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				35556E21155AE4980074AA3F /* Foundation.framework */,
+				353EC751155EE705009D6A3B /* Cocoa.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -99,6 +156,7 @@
 				35556E17155AE2B40074AA3F /* Protocols */,
 				35556E16155AE2B40074AA3F /* Classes */,
 				35556E15155AE2B40074AA3F /* Categories */,
+				353EC747155EE6B2009D6A3B /* Examples */,
 				35556E20155AE4980074AA3F /* Frameworks */,
 				35556E1F155AE4980074AA3F /* Products */,
 			);
@@ -107,6 +165,17 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		353EC74D155EE705009D6A3B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				353EC782155EE9EE009D6A3B /* OKVStore.h in Headers */,
+				353EC783155EE9F8009D6A3B /* OKVStore_private.h in Headers */,
+				353EC784155EEA03009D6A3B /* OKVSerializable.h in Headers */,
+				353EC785155EEA08009D6A3B /* Objective-OpenKeyval.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		35556E1C155AE4980074AA3F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -121,6 +190,41 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		353EC74F155EE705009D6A3B /* Objective-OpenKeyval */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 353EC761155EE705009D6A3B /* Build configuration list for PBXNativeTarget "Objective-OpenKeyval" */;
+			buildPhases = (
+				353EC74B155EE705009D6A3B /* Sources */,
+				353EC74C155EE705009D6A3B /* Frameworks */,
+				353EC74D155EE705009D6A3B /* Headers */,
+				353EC74E155EE705009D6A3B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Objective-OpenKeyval";
+			productName = "Objective-OpenKeyval";
+			productReference = 353EC750155EE705009D6A3B /* Objective-OpenKeyval.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		353EC767155EE748009D6A3B /* OKVExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 353EC772155EE748009D6A3B /* Build configuration list for PBXNativeTarget "OKVExample" */;
+			buildPhases = (
+				353EC764155EE748009D6A3B /* Sources */,
+				353EC765155EE748009D6A3B /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				353EC776155EE762009D6A3B /* PBXTargetDependency */,
+			);
+			name = OKVExample;
+			productName = OKVExample;
+			productReference = 353EC768155EE748009D6A3B /* OKVExample */;
+			productType = "com.apple.product-type.tool";
+		};
 		35556E1D155AE4980074AA3F /* Objective-OpenKeyval-iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 35556E29155AE4980074AA3F /* Build configuration list for PBXNativeTarget "Objective-OpenKeyval-iOS" */;
@@ -161,11 +265,40 @@
 			projectRoot = "";
 			targets = (
 				35556E1D155AE4980074AA3F /* Objective-OpenKeyval-iOS */,
+				353EC74F155EE705009D6A3B /* Objective-OpenKeyval */,
+				353EC767155EE748009D6A3B /* OKVExample */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		353EC74E155EE705009D6A3B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				353EC780155EE962009D6A3B /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		353EC74B155EE705009D6A3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				353EC781155EE9E4009D6A3B /* OKVStore.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		353EC764155EE748009D6A3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				353EC777155EE766009D6A3B /* example.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		35556E1A155AE4980074AA3F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -176,12 +309,138 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		353EC776155EE762009D6A3B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 353EC74F155EE705009D6A3B /* Objective-OpenKeyval */;
+			targetProxy = 353EC775155EE762009D6A3B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		353EC77E155EE962009D6A3B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				353EC77F155EE962009D6A3B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		353EC762155EE705009D6A3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "src/Support Files/Objective-OpenKeyval-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "src/Support Files/Objective-OpenKeyval-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		353EC763155EE705009D6A3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "src/Support Files/Objective-OpenKeyval-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "src/Support Files/Objective-OpenKeyval-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		353EC773155EE748009D6A3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		353EC774155EE748009D6A3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 		35556E2A155AE4980074AA3F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
 				DSTROOT = /tmp/Objective_OpenKeyval_iOS.dst;
@@ -211,7 +470,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
 				DSTROOT = /tmp/Objective_OpenKeyval_iOS.dst;
@@ -234,18 +492,36 @@
 		35567CA7155ADC430009815A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 			};
 			name = Debug;
 		};
 		35567CA8155ADC430009815A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		353EC761155EE705009D6A3B /* Build configuration list for PBXNativeTarget "Objective-OpenKeyval" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				353EC762155EE705009D6A3B /* Debug */,
+				353EC763155EE705009D6A3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		353EC772155EE748009D6A3B /* Build configuration list for PBXNativeTarget "OKVExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				353EC773155EE748009D6A3B /* Debug */,
+				353EC774155EE748009D6A3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		35556E29155AE4980074AA3F /* Build configuration list for PBXNativeTarget "Objective-OpenKeyval-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
