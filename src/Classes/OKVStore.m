@@ -87,6 +87,15 @@ static inline void assertKeyIsValid(NSString *key, OKVStore *forStore)
         return [class deserialize:[NSString stringWithUTF8String:rawData.bytes]];
 }
 
+- (BOOL)deleteKey:(NSString *)key
+{
+    assertKeyIsValid(key, self);
+    NSData *data = [self httpPost:@"" toPath:key];
+    NSLog(@"%@", data);
+    return NO;
+}
+
+#pragma mark Extension Implementation
 - (NSData *)httpGetPath:(NSString *)path
 {
     NSURL *url = [NSURL URLWithString:path 

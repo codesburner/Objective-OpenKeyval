@@ -13,6 +13,9 @@ int main(void)
         OKVStore *store = [OKVStore standardStore];
         NSString *testKey = (NSString *)[store getItemAtKey:@"testKey" ofClass:[NSString class]];
         NSLog(@"Value of testKey: %@", testKey);
+        
+        BOOL data = [store deleteKey:@"thatKeyDoesNotExist"];
+        NSLog(@"Value of thatKeyDoesNotExist: %@", data ? @"YES" : @"NO");
     }
     exit(EXIT_SUCCESS);
 }

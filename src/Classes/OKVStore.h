@@ -62,4 +62,13 @@ extern NSString * const OKVServerError;
  */
 - (id<OKVSerializable>)getItemAtKey:(NSString *)key ofClass:(Class<OKVSerializable>)class;
 
+/**
+ * Deletes the value stored for a given key.
+ * @param key The key to be deleted.
+ * @return `YES` if the key was delete, `NO` if there was no value for the key.
+ * @exception OKVTransportError If a network problem arose. The underlying error can be found in `userInfo` with the key `@"NSError"`.
+ * @exception OKVServerError If a server error arose. The actual server response can be found in `userInfo` with the key `@"NSHTTPURLResponse"`.
+ */
+- (BOOL)deleteKey:(NSString *)key;
+
 @end
