@@ -50,6 +50,7 @@
 		35556E2D155AE5100074AA3F /* OKVStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OKVStore.m; sourceTree = "<group>"; };
 		35556E30155AE57D0074AA3F /* Objective-OpenKeyval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Objective-OpenKeyval.h"; sourceTree = "<group>"; };
 		35556E32155AE6220074AA3F /* OKVSerializable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OKVSerializable.h; sourceTree = "<group>"; };
+		B9ED49B4155EFF78002A8FD9 /* AppledocSettings.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AppledocSettings.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +153,7 @@
 		35567CA0155ADC420009815A = {
 			isa = PBXGroup;
 			children = (
+				B9ED49B4155EFF78002A8FD9 /* AppledocSettings.plist */,
 				35556E18155AE2EC0074AA3F /* Support Files */,
 				35556E17155AE2B40074AA3F /* Protocols */,
 				35556E16155AE2B40074AA3F /* Classes */,
@@ -198,6 +200,7 @@
 				353EC74C155EE705009D6A3B /* Frameworks */,
 				353EC74D155EE705009D6A3B /* Headers */,
 				353EC74E155EE705009D6A3B /* Resources */,
+				B9ED49B3155EFE15002A8FD9 /* Generate Documentation (requires appledoc) */,
 			);
 			buildRules = (
 			);
@@ -281,6 +284,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B9ED49B3155EFE15002A8FD9 /* Generate Documentation (requires appledoc) */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate Documentation (requires appledoc)";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=$PATH:/usr/local/bin\n# Check if `appledoc` is available, exit if not.\ncommand -v appledoc >/dev/null 2>&1 || { exit 0; }\n\n# Figure out the location of docsetutil\nDOCSET_PATH=`command -v docsetutil 2>/dev/null`\nif [ ! -x ${DOCSET_PATH} ];then\n    DOCSET_PATH='/Applications/Xcode.app/Contents/Developer/usr/bin/docsetutil'\nfi\n\n# Run `appledoc` in xcode mode.\nappledoc --logformat=xcode                              \\\n    --output=${CONFIGURATION_BUILD_DIR}/${WRAPPER_NAME} \\\n    --docsetutil-path=${DOCSET_PATH}                    \\\n    --keep-intermediate-files                           \\\n    --exit-threshold=2                                  \\\n    .\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		353EC74B155EE705009D6A3B /* Sources */ = {
@@ -513,6 +533,7 @@
 				353EC763155EE705009D6A3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		353EC772155EE748009D6A3B /* Build configuration list for PBXNativeTarget "OKVExample" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +542,7 @@
 				353EC774155EE748009D6A3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		35556E29155AE4980074AA3F /* Build configuration list for PBXNativeTarget "Objective-OpenKeyval-iOS" */ = {
 			isa = XCConfigurationList;
