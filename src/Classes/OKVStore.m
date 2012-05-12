@@ -49,6 +49,12 @@
     return self;
 }
 
+#pragma mark Reading
+- (NSData *)getItemAtKey:(NSString *)key
+{
+    return [self httpGetPath:key];
+}
+
 #pragma mark Extension Implementation
 - (BOOL)isKeyValid:(NSString *)key
 {

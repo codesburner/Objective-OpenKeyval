@@ -19,4 +19,7 @@ typedef void (^OKVCallback)(
 + (OKVStore *)secureStore;
 - (OKVStore *)initWithURL:(NSString *)url;
 
+#pragma mark Reading
+- (NSData*)getItemAtKey:(NSString *)key;
+
 @end
