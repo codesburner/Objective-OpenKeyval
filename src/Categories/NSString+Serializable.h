@@ -3,5 +3,7 @@
  * http://creativecommons.org/licenses/by-sa/3.0/
  */
 
-#import "OKVStore.h"
-#import "NSString+Serializable.h"
+#import "OKVSerializable.h"
+
+@interface NSString (Serializable) <OKVSerializable>
+@end

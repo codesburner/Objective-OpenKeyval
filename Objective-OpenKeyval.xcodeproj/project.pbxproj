@@ -23,6 +23,10 @@
 		35556E2F155AE5100074AA3F /* OKVStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 35556E2D155AE5100074AA3F /* OKVStore.m */; };
 		35556E31155AE57D0074AA3F /* Objective-OpenKeyval.h in Headers */ = {isa = PBXBuildFile; fileRef = 35556E30155AE57D0074AA3F /* Objective-OpenKeyval.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		35556E33155AE6220074AA3F /* OKVSerializable.h in Headers */ = {isa = PBXBuildFile; fileRef = 35556E32155AE6220074AA3F /* OKVSerializable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B9ED49B7155F14C2002A8FD9 /* NSString+Serializable.h in Headers */ = {isa = PBXBuildFile; fileRef = B9ED49B5155F14C2002A8FD9 /* NSString+Serializable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B9ED49B8155F14C2002A8FD9 /* NSString+Serializable.h in Headers */ = {isa = PBXBuildFile; fileRef = B9ED49B5155F14C2002A8FD9 /* NSString+Serializable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B9ED49B9155F14C2002A8FD9 /* NSString+Serializable.m in Sources */ = {isa = PBXBuildFile; fileRef = B9ED49B6155F14C2002A8FD9 /* NSString+Serializable.m */; };
+		B9ED49BA155F14C2002A8FD9 /* NSString+Serializable.m in Sources */ = {isa = PBXBuildFile; fileRef = B9ED49B6155F14C2002A8FD9 /* NSString+Serializable.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,8 @@
 		35556E30155AE57D0074AA3F /* Objective-OpenKeyval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Objective-OpenKeyval.h"; sourceTree = "<group>"; };
 		35556E32155AE6220074AA3F /* OKVSerializable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OKVSerializable.h; sourceTree = "<group>"; };
 		B9ED49B4155EFF78002A8FD9 /* AppledocSettings.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AppledocSettings.plist; sourceTree = "<group>"; };
+		B9ED49B5155F14C2002A8FD9 /* NSString+Serializable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Serializable.h"; sourceTree = "<group>"; };
+		B9ED49B6155F14C2002A8FD9 /* NSString+Serializable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Serializable.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +101,8 @@
 			isa = PBXGroup;
 			children = (
 				3544A2CF155B107E000295E6 /* OKVStore_private.h */,
+				B9ED49B5155F14C2002A8FD9 /* NSString+Serializable.h */,
+				B9ED49B6155F14C2002A8FD9 /* NSString+Serializable.m */,
 			);
 			name = Categories;
 			path = src/Categories;
@@ -175,6 +183,7 @@
 				353EC783155EE9F8009D6A3B /* OKVStore_private.h in Headers */,
 				353EC784155EEA03009D6A3B /* OKVSerializable.h in Headers */,
 				353EC785155EEA08009D6A3B /* Objective-OpenKeyval.h in Headers */,
+				B9ED49B8155F14C2002A8FD9 /* NSString+Serializable.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,6 +195,7 @@
 				35556E2E155AE5100074AA3F /* OKVStore.h in Headers */,
 				35556E33155AE6220074AA3F /* OKVSerializable.h in Headers */,
 				3544A2D0155B107E000295E6 /* OKVStore_private.h in Headers */,
+				B9ED49B7155F14C2002A8FD9 /* NSString+Serializable.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				353EC781155EE9E4009D6A3B /* OKVStore.m in Sources */,
+				B9ED49BA155F14C2002A8FD9 /* NSString+Serializable.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				35556E2F155AE5100074AA3F /* OKVStore.m in Sources */,
+				B9ED49B9155F14C2002A8FD9 /* NSString+Serializable.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
