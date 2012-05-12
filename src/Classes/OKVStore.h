@@ -6,11 +6,9 @@
 #import "OKVSerializable.h"
 
 #pragma mark - Helper definitions / macros
-typedef void (^OKVCallback)(
-    NSString *key,
-    id<OKVSerializable> value,
-    NSError *error
-);
+extern NSString * const OKVInvalidKeyException;
+extern NSString * const OKVTransportError;
+extern NSString * const OKVServerError;
 
 #pragma mark - Key-Value Store interface
 @interface OKVStore : NSObject

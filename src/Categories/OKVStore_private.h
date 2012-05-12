@@ -4,10 +4,12 @@
  */
 
 #import "OKVStore.h"
+#import "OKVSerializable.h"
 
 @interface OKVStore ()
 
 - (NSData *)httpGetPath:(NSString *)path;
 - (NSData *)httpPost:(NSDictionary *)formData;
+- (NSData *)httpPost:(id<OKVSerializable>)data toPath:(NSString *)path;
 
 @end
