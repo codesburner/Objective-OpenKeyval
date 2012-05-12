@@ -78,10 +78,13 @@ static inline void assertKeyIsValid(NSString *key, OKVStore *forStore)
     return [self httpGetPath:key];
 }
 
-#pragma mark Extension Implementation
-- (BOOL)isKeyValid:(NSString *)key
+- (id<OKVSerializable>)getItemAtKey:(NSString *)key ofClass:(Class<OKVSerializable>)class
 {
-    return [key rangeOfCharacterFromSet:keyForbiddenCharset].location == NSNotFound; 
+    NSData *rawData = [self getItemAtKey:key];
+    if (rawData == nil)
+        return nil;
+    else
+        return [class deserialize:[NSString stringWithUTF8String:rawData.bytes]];
 }
 
 - (NSData *)httpGetPath:(NSString *)path

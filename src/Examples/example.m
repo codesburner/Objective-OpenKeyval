@@ -11,8 +11,8 @@ int main(void)
 {
     @autoreleasepool {
         OKVStore *store = [OKVStore standardStore];
-        NSData *data = [store getItemAtKey:@"testKey"];
-        NSLog(@"%@", [NSString stringWithUTF8String:data.bytes]);
+        NSString *testKey = (NSString *)[store getItemAtKey:@"testKey" ofClass:[NSString class]];
+        NSLog(@"Value of testKey: %@", testKey);
     }
     exit(EXIT_SUCCESS);
 }
