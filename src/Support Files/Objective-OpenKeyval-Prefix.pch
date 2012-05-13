@@ -8,5 +8,6 @@
 #endif
 
 #import "OKVStore_private.h"
+#import "NSString+Serializable.h"
 
 #define stringWithFormat(format, args...)    [NSString stringWithFormat:(format), ## args]

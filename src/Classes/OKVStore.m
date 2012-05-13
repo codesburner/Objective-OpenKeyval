@@ -4,6 +4,7 @@
  */
 
 #import "OKVStore.h"
+#import "JSONKit.h"
 
 #pragma mark - Helper definitions & macros
 NSString * const OKVInvalidKeyException = @"InvalidKeyException";
@@ -91,8 +92,8 @@ static inline void assertKeyIsValid(NSString *key, OKVStore *forStore)
 {
     assertKeyIsValid(key, self);
     NSData *data = [self httpPost:@"" toPath:key];
-    NSLog(@"%@", data);
-    return NO;
+    NSDictionary *jsonData = [[JSONDecoder new] objectWithData:data];
+    return [[jsonData valueForKey:@"status"] isEqualToString:@"removed"];
 }
 
 #pragma mark Extension Implementation
@@ -146,7 +147,7 @@ static inline void assertKeyIsValid(NSString *key, OKVStore *forStore)
                                                            cachePolicy:NSURLCacheStorageNotAllowed 
                                                        timeoutInterval:kOKVTimeout];
     [request setHTTPMethod:@"POST"];
-    [request setValue:@"application/x-www-form-urlencodeda; charset=urf-8" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:@"application/x-www-form-urlencoded; charset=urf-8" forHTTPHeaderField:@"Content-Type"];
     [request setHTTPBody:[postData dataUsingEncoding:NSUTF8StringEncoding]];
 
     NSHTTPURLResponse *response = nil;
@@ -168,7 +169,7 @@ static inline void assertKeyIsValid(NSString *key, OKVStore *forStore)
                                                            cachePolicy:NSURLCacheStorageNotAllowed 
                                                        timeoutInterval:kOKVTimeout];
     [request setHTTPMethod:@"POST"];
-    [request setValue:@"application/x-www-form-urlencodeda; charset=urf-8" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:@"application/x-www-form-urlencoded; charset=urf-8" forHTTPHeaderField:@"Content-Type"];
     [request setHTTPBody:[stringWithFormat(@"data=%@", [data serialize]) dataUsingEncoding:NSUTF8StringEncoding]];
     
     NSHTTPURLResponse *response = nil;
