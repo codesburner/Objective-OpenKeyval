@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3528461315600FC100E54710 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 352845EF155FAE7000E54710 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		3528461415600FCE00E54710 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 352845EF155FAE7000E54710 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		353EC752155EE705009D6A3B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 353EC751155EE705009D6A3B /* Cocoa.framework */; };
 		353EC76A155EE748009D6A3B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35556E21155AE4980074AA3F /* Foundation.framework */; };
 		353EC777155EE766009D6A3B /* example.m in Sources */ = {isa = PBXBuildFile; fileRef = 353EC749155EE6C7009D6A3B /* example.m */; };
@@ -40,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		352845EE155FAE7000E54710 /* JSONKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		352845EF155FAE7000E54710 /* JSONKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		353EC749155EE6C7009D6A3B /* example.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = example.m; sourceTree = "<group>"; };
 		353EC750155EE705009D6A3B /* Objective-OpenKeyval.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Objective-OpenKeyval.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		353EC751155EE705009D6A3B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -88,6 +92,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		352845EB155FAD3500E54710 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				352845ED155FAD7100E54710 /* JSONKit */,
+			);
+			name = External;
+			path = ext;
+			sourceTree = "<group>";
+		};
+		352845ED155FAD7100E54710 /* JSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				352845EE155FAE7000E54710 /* JSONKit.h */,
+				352845EF155FAE7000E54710 /* JSONKit.m */,
+			);
+			path = JSONKit;
+			sourceTree = "<group>";
+		};
 		353EC747155EE6B2009D6A3B /* Examples */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +174,7 @@
 		35556E20155AE4980074AA3F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				352845EB155FAD3500E54710 /* External */,
 				35556E21155AE4980074AA3F /* Foundation.framework */,
 				353EC751155EE705009D6A3B /* Cocoa.framework */,
 			);
@@ -319,6 +342,7 @@
 			files = (
 				353EC781155EE9E4009D6A3B /* OKVStore.m in Sources */,
 				B9ED49BA155F14C2002A8FD9 /* NSString+Serializable.m in Sources */,
+				3528461315600FC100E54710 /* JSONKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +360,7 @@
 			files = (
 				35556E2F155AE5100074AA3F /* OKVStore.m in Sources */,
 				B9ED49B9155F14C2002A8FD9 /* NSString+Serializable.m in Sources */,
+				3528461415600FCE00E54710 /* JSONKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
