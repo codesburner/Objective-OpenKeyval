@@ -8,6 +8,8 @@ key/value store. It is intended to be as simple to use as possible, and
 to reduce the amount of boilerplate code needed in order to make
 something useful out of it.
 
+____
+
 Acknowledgements
-________________
+----------------
 JSONKit - https://github.com/johnezang/JSONKit
