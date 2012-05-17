@@ -7,7 +7,9 @@
     #import <Foundation/Foundation.h>
 #endif
 
-#import "OKVStore_private.h"
+#import "OKVStore_Private.h"
 #import "NSString+Serializable.h"
+#import "OKVExceptions.h"
+#import "OKVConnectionHelper.h"
 
 #define stringWithFormat(format, args...)    [NSString stringWithFormat:(format), ## args]

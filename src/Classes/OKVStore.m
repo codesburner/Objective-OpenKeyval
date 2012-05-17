@@ -7,10 +7,6 @@
 #import "JSONKit.h"
 
 #pragma mark - Helper definitions & macros
-NSString * const OKVInvalidKeyException = @"InvalidKeyException";
-NSString * const OKVTransportError = @"TransportError";
-NSString * const OKVServerError = @"ServerError";
-
 #define kOKVURLStandard     @"http://api.openkeyval.org"
 #define kOKVURLSecure       @"https://secure.openkeyval.org"
 #define kOKVTimeout         5.0
@@ -19,38 +15,10 @@ NSString * const OKVServerError = @"ServerError";
 #define kOKVMaxKeySize      128
 #define kOKVMaxPayloadSize  65536L
 
-#pragma mark - Extension
-@interface OKVStore ()
-@property (readonly) NSURL          *storeUrl;
-@property (readonly) NSCharacterSet *keyForbiddenCharset;
-@end
-
 #pragma mark - Static functions
-static inline void assertKeyIsValid(NSString *key, OKVStore *forStore)
-{
-#define userInfoDict    [NSDictionary dictionaryWithObjectsAndKeys:key, @"OKVKey", forStore, @"OKVStore", nil]
-    if (key.length < kOKVMinKeySize)
-        @throw [NSException exceptionWithName:OKVInvalidKeyException 
-                                       reason:stringWithFormat(@"Key \"%@\" should be at least %i characters long.", key, kOKVMinKeySize)
-                                     userInfo:userInfoDict];
-    if (key.length > kOKVMaxKeySize)
-        @throw [NSException exceptionWithName:OKVInvalidKeyException
-                                       reason:stringWithFormat(@"Key \"%@\" should be at most %i characters long.", key, kOKVMaxKeySize) 
-                                     userInfo:userInfoDict];
-    if ([key rangeOfCharacterFromSet:forStore.keyForbiddenCharset].location != NSNotFound)
-        @throw [NSException exceptionWithName:OKVInvalidKeyException 
-                                       reason:stringWithFormat(@"Key \"%@\" can only contain characters within \"%@\".", key, kOKVAllowedKeyChars) 
-                                     userInfo:userInfoDict];
-#undef userInfoDict
-}
 
 #pragma mark - Implementation
 @implementation OKVStore
-
-#pragma mark Synthetics
-@synthesize storeUrl;
-@synthesize keyForbiddenCharset;
-
 #pragma mark Initializers
 + (OKVStore *)standardStore
 {
@@ -62,10 +30,16 @@ static inline void assertKeyIsValid(NSString *key, OKVStore *forStore)
     return [[OKVStore alloc] initWithURL:kOKVURLSecure];
 }
 
+- (id)init
+{
+    [self doesNotRecognizeSelector:_cmd];
+    return nil;
+}
+
 - (OKVStore *)initWithURL:(NSString *)url
 {
     if ((self = [super init])) {
-        storeUrl = [NSURL URLWithString:url];
+        storeURL = [NSURL URLWithString:url];
         NSCharacterSet *keyValidCharset = [NSCharacterSet characterSetWithCharactersInString:kOKVAllowedKeyChars];
         keyForbiddenCharset = [keyValidCharset invertedSet];
     }
@@ -75,8 +49,23 @@ static inline void assertKeyIsValid(NSString *key, OKVStore *forStore)
 #pragma mark Data Accessors
 - (NSData *)getItemAtKey:(NSString *)key
 {
-    assertKeyIsValid(key, self);
-    return [self httpGetPath:key];
+    [self assertKeyIsValid:key];
+    
+    __block NSData *result;
+    OKVDataCallback block = ^(int statusCode, NSData *data) {
+        if (statusCode == 200)
+            result = data;
+        else
+            result = nil;
+    };
+    
+    [OKVConnectionHelper sendRequestToURL:[NSURL URLWithString:key relativeToURL:storeURL]
+                               withMethod:@"GET"
+                                  timeOut:kOKVTimeout
+                              synchronous:YES
+                                 callback:OKVSimpleConnectionCallback(block)];
+        
+    return result;
 }
 
 - (id<OKVSerializable>)getItemAtKey:(NSString *)key ofClass:(Class<OKVSerializable>)class
@@ -90,39 +79,21 @@ static inline void assertKeyIsValid(NSString *key, OKVStore *forStore)
 
 - (BOOL)deleteKey:(NSString *)key
 {
-    assertKeyIsValid(key, self);
+    [self assertKeyIsValid:key];
     NSData *data = [self httpPost:@"" toPath:key];
     NSDictionary *jsonData = [[JSONDecoder new] objectWithData:data];
     return [[jsonData valueForKey:@"status"] isEqualToString:@"removed"];
 }
 
 #pragma mark Extension Implementation
-- (NSData *)httpGetPath:(NSString *)path
+- (void)assertKeyIsValid:(NSString *)key
 {
-    NSURL *url = [NSURL URLWithString:path 
-                        relativeToURL:self.storeUrl];
-    NSMutableURLRequest *request = [NSURLRequest requestWithURL:url 
-                                             cachePolicy:NSURLCacheStorageNotAllowed 
-                                         timeoutInterval:kOKVTimeout];
-
-    NSHTTPURLResponse *response = nil;
-    NSError *error = nil;
-    NSData *responseData = [NSURLConnection sendSynchronousRequest:request 
-                                                 returningResponse:&response 
-                                                             error:&error];
-    
-    if (error != nil)
-        @throw [NSException exceptionWithName:OKVTransportError
-                                       reason:error.description
-                                     userInfo:[NSDictionary dictionaryWithObject:error forKey:@"NSError"]];
-    
-    if (response.statusCode == 200)
-        return responseData;
-    else if (response.statusCode == 404)
-        return nil;
-    @throw [NSException exceptionWithName:OKVServerError 
-                                   reason:stringWithFormat(@"Server responded with HTTP %i.", response.statusCode) 
-                                 userInfo:[NSDictionary dictionaryWithObject:response forKey:@"NSHTTPURLResponse"]];
+    if (key.length < kOKVMinKeySize)
+        @throw invalidKeyException(key, self, stringWithFormat(@"Key \"%@\" should be at least %i characters long.", key, kOKVMinKeySize));
+    if (key.length > kOKVMaxKeySize)
+        @throw invalidKeyException(key, self, stringWithFormat(@"Key \"%@\" should be at most %i characters long.", key, kOKVMaxKeySize));
+    if ([key rangeOfCharacterFromSet:keyForbiddenCharset].location != NSNotFound)
+        @throw invalidKeyException(key, self, stringWithFormat(@"Key \"%@\" can only contain characters within \"%@\".", key, kOKVAllowedKeyChars));
 }
 
 - (NSData *)httpPost:(NSDictionary *)formData
@@ -143,7 +114,7 @@ static inline void assertKeyIsValid(NSString *key, OKVStore *forStore)
                                          [valueString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     }
 
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:self.storeUrl 
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:storeURL 
                                                            cachePolicy:NSURLCacheStorageNotAllowed 
                                                        timeoutInterval:kOKVTimeout];
     [request setHTTPMethod:@"POST"];
@@ -165,7 +136,7 @@ static inline void assertKeyIsValid(NSString *key, OKVStore *forStore)
 
 - (NSData *)httpPost:(id<OKVSerializable>)data toPath:(NSString *)path
 {
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:path relativeToURL:self.storeUrl] 
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:path relativeToURL:storeURL] 
                                                            cachePolicy:NSURLCacheStorageNotAllowed 
                                                        timeoutInterval:kOKVTimeout];
     [request setHTTPMethod:@"POST"];
@@ -178,14 +149,10 @@ static inline void assertKeyIsValid(NSString *key, OKVStore *forStore)
                                                  returningResponse:&response 
                                                              error:&error];
     if (error != nil)
-        @throw [NSException exceptionWithName:OKVTransportError
-                                       reason:error.description
-                                     userInfo:[NSDictionary dictionaryWithObject:error forKey:@"NSError"]];
+        @throw transportErrorException(error);
     
     if (response.statusCode != 200)
-        @throw [NSException exceptionWithName:OKVServerError 
-                                       reason:stringWithFormat(@"Server responded with HTTP %i.", response.statusCode) 
-                                     userInfo:[NSDictionary dictionaryWithObject:response forKey:@"NSHTTPURLResponse"]];
+        @throw serverErrorException(response, responseData);
     
     return responseData;
 }

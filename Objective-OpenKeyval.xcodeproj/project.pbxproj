@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3514E20315655415003FF1F7 /* OKVStore_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 3514E20115655205003FF1F7 /* OKVStore_Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3514E20415655416003FF1F7 /* OKVStore_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 3514E20115655205003FF1F7 /* OKVStore_Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3514E2071565545A003FF1F7 /* OKVConnectionHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 3514E2051565545A003FF1F7 /* OKVConnectionHelper.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3514E2081565545A003FF1F7 /* OKVConnectionHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 3514E2051565545A003FF1F7 /* OKVConnectionHelper.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3514E2091565545A003FF1F7 /* OKVConnectionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3514E2061565545A003FF1F7 /* OKVConnectionHelper.m */; };
+		3514E20A1565545A003FF1F7 /* OKVConnectionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3514E2061565545A003FF1F7 /* OKVConnectionHelper.m */; };
 		3528461315600FC100E54710 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 352845EF155FAE7000E54710 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		3528461415600FCE00E54710 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 352845EF155FAE7000E54710 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		353EC752155EE705009D6A3B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 353EC751155EE705009D6A3B /* Cocoa.framework */; };
@@ -16,15 +22,17 @@
 		353EC780155EE962009D6A3B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 353EC77E155EE962009D6A3B /* InfoPlist.strings */; };
 		353EC781155EE9E4009D6A3B /* OKVStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 35556E2D155AE5100074AA3F /* OKVStore.m */; };
 		353EC782155EE9EE009D6A3B /* OKVStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 35556E2C155AE5100074AA3F /* OKVStore.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		353EC783155EE9F8009D6A3B /* OKVStore_private.h in Headers */ = {isa = PBXBuildFile; fileRef = 3544A2CF155B107E000295E6 /* OKVStore_private.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		353EC784155EEA03009D6A3B /* OKVSerializable.h in Headers */ = {isa = PBXBuildFile; fileRef = 35556E32155AE6220074AA3F /* OKVSerializable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		353EC785155EEA08009D6A3B /* Objective-OpenKeyval.h in Headers */ = {isa = PBXBuildFile; fileRef = 35556E30155AE57D0074AA3F /* Objective-OpenKeyval.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3544A2D0155B107E000295E6 /* OKVStore_private.h in Headers */ = {isa = PBXBuildFile; fileRef = 3544A2CF155B107E000295E6 /* OKVStore_private.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		35556E22155AE4980074AA3F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35556E21155AE4980074AA3F /* Foundation.framework */; };
 		35556E2E155AE5100074AA3F /* OKVStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 35556E2C155AE5100074AA3F /* OKVStore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		35556E2F155AE5100074AA3F /* OKVStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 35556E2D155AE5100074AA3F /* OKVStore.m */; };
 		35556E31155AE57D0074AA3F /* Objective-OpenKeyval.h in Headers */ = {isa = PBXBuildFile; fileRef = 35556E30155AE57D0074AA3F /* Objective-OpenKeyval.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		35556E33155AE6220074AA3F /* OKVSerializable.h in Headers */ = {isa = PBXBuildFile; fileRef = 35556E32155AE6220074AA3F /* OKVSerializable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		35873BD3156522D900399062 /* OKVExceptions.h in Headers */ = {isa = PBXBuildFile; fileRef = 35873BD2156522D900399062 /* OKVExceptions.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		35873BD4156522D900399062 /* OKVExceptions.h in Headers */ = {isa = PBXBuildFile; fileRef = 35873BD2156522D900399062 /* OKVExceptions.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		35873BD7156522E600399062 /* OKVExceptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 35873BD6156522E600399062 /* OKVExceptions.m */; };
+		35873BD8156522E900399062 /* OKVExceptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 35873BD6156522E600399062 /* OKVExceptions.m */; };
 		B9ED49B7155F14C2002A8FD9 /* NSString+Serializable.h in Headers */ = {isa = PBXBuildFile; fileRef = B9ED49B5155F14C2002A8FD9 /* NSString+Serializable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B9ED49B8155F14C2002A8FD9 /* NSString+Serializable.h in Headers */ = {isa = PBXBuildFile; fileRef = B9ED49B5155F14C2002A8FD9 /* NSString+Serializable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B9ED49B9155F14C2002A8FD9 /* NSString+Serializable.m in Sources */ = {isa = PBXBuildFile; fileRef = B9ED49B6155F14C2002A8FD9 /* NSString+Serializable.m */; };
@@ -42,6 +50,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3514E20115655205003FF1F7 /* OKVStore_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OKVStore_Private.h; sourceTree = "<group>"; };
+		3514E2051565545A003FF1F7 /* OKVConnectionHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OKVConnectionHelper.h; sourceTree = "<group>"; };
+		3514E2061565545A003FF1F7 /* OKVConnectionHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OKVConnectionHelper.m; sourceTree = "<group>"; };
 		352845EE155FAE7000E54710 /* JSONKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		352845EF155FAE7000E54710 /* JSONKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		353EC749155EE6C7009D6A3B /* example.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = example.m; sourceTree = "<group>"; };
@@ -50,7 +61,6 @@
 		353EC759155EE705009D6A3B /* Objective-OpenKeyval-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Objective-OpenKeyval-Info.plist"; sourceTree = "<group>"; };
 		353EC768155EE748009D6A3B /* OKVExample */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OKVExample; sourceTree = BUILT_PRODUCTS_DIR; };
 		353EC77F155EE962009D6A3B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		3544A2CF155B107E000295E6 /* OKVStore_private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OKVStore_private.h; sourceTree = "<group>"; };
 		35556E19155AE3A50074AA3F /* Objective-OpenKeyval-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Objective-OpenKeyval-Prefix.pch"; sourceTree = "<group>"; };
 		35556E1E155AE4980074AA3F /* libObjective-OpenKeyval-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libObjective-OpenKeyval-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		35556E21155AE4980074AA3F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -58,6 +68,8 @@
 		35556E2D155AE5100074AA3F /* OKVStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OKVStore.m; sourceTree = "<group>"; };
 		35556E30155AE57D0074AA3F /* Objective-OpenKeyval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Objective-OpenKeyval.h"; sourceTree = "<group>"; };
 		35556E32155AE6220074AA3F /* OKVSerializable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OKVSerializable.h; sourceTree = "<group>"; };
+		35873BD2156522D900399062 /* OKVExceptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OKVExceptions.h; sourceTree = "<group>"; };
+		35873BD6156522E600399062 /* OKVExceptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OKVExceptions.m; sourceTree = "<group>"; };
 		B9ED49B4155EFF78002A8FD9 /* AppledocSettings.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AppledocSettings.plist; sourceTree = "<group>"; };
 		B9ED49B5155F14C2002A8FD9 /* NSString+Serializable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Serializable.h"; sourceTree = "<group>"; };
 		B9ED49B6155F14C2002A8FD9 /* NSString+Serializable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Serializable.m"; sourceTree = "<group>"; };
@@ -122,7 +134,6 @@
 		35556E15155AE2B40074AA3F /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				3544A2CF155B107E000295E6 /* OKVStore_private.h */,
 				B9ED49B5155F14C2002A8FD9 /* NSString+Serializable.h */,
 				B9ED49B6155F14C2002A8FD9 /* NSString+Serializable.m */,
 			);
@@ -152,6 +163,7 @@
 		35556E18155AE2EC0074AA3F /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				35B24F0F1565208D009D7336 /* Privates */,
 				353EC759155EE705009D6A3B /* Objective-OpenKeyval-Info.plist */,
 				353EC77E155EE962009D6A3B /* InfoPlist.strings */,
 				35556E19155AE3A50074AA3F /* Objective-OpenKeyval-Prefix.pch */,
@@ -195,6 +207,19 @@
 			);
 			sourceTree = "<group>";
 		};
+		35B24F0F1565208D009D7336 /* Privates */ = {
+			isa = PBXGroup;
+			children = (
+				35873BD2156522D900399062 /* OKVExceptions.h */,
+				35873BD6156522E600399062 /* OKVExceptions.m */,
+				3514E20115655205003FF1F7 /* OKVStore_Private.h */,
+				3514E2051565545A003FF1F7 /* OKVConnectionHelper.h */,
+				3514E2061565545A003FF1F7 /* OKVConnectionHelper.m */,
+			);
+			name = Privates;
+			path = ../Privates;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -203,10 +228,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				353EC782155EE9EE009D6A3B /* OKVStore.h in Headers */,
-				353EC783155EE9F8009D6A3B /* OKVStore_private.h in Headers */,
 				353EC784155EEA03009D6A3B /* OKVSerializable.h in Headers */,
 				353EC785155EEA08009D6A3B /* Objective-OpenKeyval.h in Headers */,
 				B9ED49B8155F14C2002A8FD9 /* NSString+Serializable.h in Headers */,
+				35873BD4156522D900399062 /* OKVExceptions.h in Headers */,
+				3514E20415655416003FF1F7 /* OKVStore_Private.h in Headers */,
+				3514E2081565545A003FF1F7 /* OKVConnectionHelper.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,8 +244,10 @@
 				35556E31155AE57D0074AA3F /* Objective-OpenKeyval.h in Headers */,
 				35556E2E155AE5100074AA3F /* OKVStore.h in Headers */,
 				35556E33155AE6220074AA3F /* OKVSerializable.h in Headers */,
-				3544A2D0155B107E000295E6 /* OKVStore_private.h in Headers */,
 				B9ED49B7155F14C2002A8FD9 /* NSString+Serializable.h in Headers */,
+				35873BD3156522D900399062 /* OKVExceptions.h in Headers */,
+				3514E20315655415003FF1F7 /* OKVStore_Private.h in Headers */,
+				3514E2071565545A003FF1F7 /* OKVConnectionHelper.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +372,8 @@
 				353EC781155EE9E4009D6A3B /* OKVStore.m in Sources */,
 				B9ED49BA155F14C2002A8FD9 /* NSString+Serializable.m in Sources */,
 				3528461315600FC100E54710 /* JSONKit.m in Sources */,
+				35873BD8156522E900399062 /* OKVExceptions.m in Sources */,
+				3514E20A1565545A003FF1F7 /* OKVConnectionHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +392,8 @@
 				35556E2F155AE5100074AA3F /* OKVStore.m in Sources */,
 				B9ED49B9155F14C2002A8FD9 /* NSString+Serializable.m in Sources */,
 				3528461415600FCE00E54710 /* JSONKit.m in Sources */,
+				35873BD7156522E600399062 /* OKVExceptions.m in Sources */,
+				3514E2091565545A003FF1F7 /* OKVConnectionHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,8 +432,6 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "src/Support Files/Objective-OpenKeyval-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -431,8 +462,6 @@
 				FRAMEWORK_VERSION = A;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "src/Support Files/Objective-OpenKeyval-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
@@ -455,7 +484,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -482,7 +511,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -504,8 +533,6 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "src/Support Files/Objective-OpenKeyval-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -531,8 +558,6 @@
 				COPY_PHASE_STRIP = YES;
 				DSTROOT = /tmp/Objective_OpenKeyval_iOS.dst;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "src/Support Files/Objective-OpenKeyval-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
@@ -550,6 +575,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "src/Support Files/Objective-OpenKeyval-Prefix.pch";
 			};
 			name = Debug;
 		};
@@ -557,6 +585,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "src/Support Files/Objective-OpenKeyval-Prefix.pch";
 			};
 			name = Release;
 		};

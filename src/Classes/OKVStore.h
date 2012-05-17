@@ -5,7 +5,7 @@
 
 #import "OKVSerializable.h"
 
-#pragma mark - Helper definitions / macros
+#pragma mark - Exception Names
 extern NSString * const OKVInvalidKeyException;
 extern NSString * const OKVTransportError;
 extern NSString * const OKVServerError;
