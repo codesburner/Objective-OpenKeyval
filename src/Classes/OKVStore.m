@@ -14,6 +14,7 @@
 #define kOKVMinKeySize      5
 #define kOKVMaxKeySize      128
 #define kOKVMaxPayloadSize  65536L
+#define kOKVContentType     @"application/x-www-form-urlencoded; charset=utf-8"
 
 #pragma mark - Static functions
 
@@ -83,6 +84,19 @@
     NSData *data = [self httpPost:@"" toPath:key];
     NSDictionary *jsonData = [[JSONDecoder new] objectWithData:data];
     return [[jsonData valueForKey:@"status"] isEqualToString:@"removed"];
+
+- (void)putData:(NSData *)data atKey:(NSString *)key
+{
+    [self assertKeyIsValid:key];
+
+    [OKVConnectionHelper sendRequestToURL:storeURL
+                               withMethod:@"POST" 
+                               bodyString:stringWithFormat(@"%@=%@", key, [data urlEncode])
+                              contentType:kOKVContentType 
+                                  timeOut:kOKVTimeout 
+                              synchronous:YES 
+                                 callback:OKVSimpleConnectionCallback(nil)];
+}
 }
 
 #pragma mark Extension Implementation

@@ -62,6 +62,7 @@ extern NSString * const OKVServerError;
  */
 - (id<OKVSerializable>)getItemAtKey:(NSString *)key ofClass:(Class<OKVSerializable>)class;
 
+- (void)putData:(NSData *)data atKey:(NSString *)key;
 /**
  * Deletes the value stored for a given key.
  * @param key The key to be deleted.
