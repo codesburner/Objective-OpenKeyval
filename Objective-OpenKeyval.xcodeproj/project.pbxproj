@@ -33,6 +33,10 @@
 		35873BD4156522D900399062 /* OKVExceptions.h in Headers */ = {isa = PBXBuildFile; fileRef = 35873BD2156522D900399062 /* OKVExceptions.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		35873BD7156522E600399062 /* OKVExceptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 35873BD6156522E600399062 /* OKVExceptions.m */; };
 		35873BD8156522E900399062 /* OKVExceptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 35873BD6156522E600399062 /* OKVExceptions.m */; };
+		35C3B59015713707009284B2 /* NSData+Serializable.h in Headers */ = {isa = PBXBuildFile; fileRef = 35C3B58E15713707009284B2 /* NSData+Serializable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		35C3B59115713707009284B2 /* NSData+Serializable.h in Headers */ = {isa = PBXBuildFile; fileRef = 35C3B58E15713707009284B2 /* NSData+Serializable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		35C3B59215713707009284B2 /* NSData+Serializable.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C3B58F15713707009284B2 /* NSData+Serializable.m */; };
+		35C3B59315713707009284B2 /* NSData+Serializable.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C3B58F15713707009284B2 /* NSData+Serializable.m */; };
 		B9ED49B7155F14C2002A8FD9 /* NSString+Serializable.h in Headers */ = {isa = PBXBuildFile; fileRef = B9ED49B5155F14C2002A8FD9 /* NSString+Serializable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B9ED49B8155F14C2002A8FD9 /* NSString+Serializable.h in Headers */ = {isa = PBXBuildFile; fileRef = B9ED49B5155F14C2002A8FD9 /* NSString+Serializable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B9ED49B9155F14C2002A8FD9 /* NSString+Serializable.m in Sources */ = {isa = PBXBuildFile; fileRef = B9ED49B6155F14C2002A8FD9 /* NSString+Serializable.m */; };
@@ -70,6 +74,8 @@
 		35556E32155AE6220074AA3F /* OKVSerializable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OKVSerializable.h; sourceTree = "<group>"; };
 		35873BD2156522D900399062 /* OKVExceptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OKVExceptions.h; sourceTree = "<group>"; };
 		35873BD6156522E600399062 /* OKVExceptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OKVExceptions.m; sourceTree = "<group>"; };
+		35C3B58E15713707009284B2 /* NSData+Serializable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Serializable.h"; sourceTree = "<group>"; };
+		35C3B58F15713707009284B2 /* NSData+Serializable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Serializable.m"; sourceTree = "<group>"; };
 		B9ED49B4155EFF78002A8FD9 /* AppledocSettings.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AppledocSettings.plist; sourceTree = "<group>"; };
 		B9ED49B5155F14C2002A8FD9 /* NSString+Serializable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Serializable.h"; sourceTree = "<group>"; };
 		B9ED49B6155F14C2002A8FD9 /* NSString+Serializable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Serializable.m"; sourceTree = "<group>"; };
@@ -136,6 +142,8 @@
 			children = (
 				B9ED49B5155F14C2002A8FD9 /* NSString+Serializable.h */,
 				B9ED49B6155F14C2002A8FD9 /* NSString+Serializable.m */,
+				35C3B58E15713707009284B2 /* NSData+Serializable.h */,
+				35C3B58F15713707009284B2 /* NSData+Serializable.m */,
 			);
 			name = Categories;
 			path = src/Categories;
@@ -234,6 +242,7 @@
 				35873BD4156522D900399062 /* OKVExceptions.h in Headers */,
 				3514E20415655416003FF1F7 /* OKVStore_Private.h in Headers */,
 				3514E2081565545A003FF1F7 /* OKVConnectionHelper.h in Headers */,
+				35C3B59115713707009284B2 /* NSData+Serializable.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +257,7 @@
 				35873BD3156522D900399062 /* OKVExceptions.h in Headers */,
 				3514E20315655415003FF1F7 /* OKVStore_Private.h in Headers */,
 				3514E2071565545A003FF1F7 /* OKVConnectionHelper.h in Headers */,
+				35C3B59015713707009284B2 /* NSData+Serializable.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,6 +384,7 @@
 				3528461315600FC100E54710 /* JSONKit.m in Sources */,
 				35873BD8156522E900399062 /* OKVExceptions.m in Sources */,
 				3514E20A1565545A003FF1F7 /* OKVConnectionHelper.m in Sources */,
+				35C3B59315713707009284B2 /* NSData+Serializable.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +405,7 @@
 				3528461415600FCE00E54710 /* JSONKit.m in Sources */,
 				35873BD7156522E600399062 /* OKVExceptions.m in Sources */,
 				3514E2091565545A003FF1F7 /* OKVConnectionHelper.m in Sources */,
+				35C3B59215713707009284B2 /* NSData+Serializable.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

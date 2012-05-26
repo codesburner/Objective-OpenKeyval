@@ -10,14 +10,14 @@
 
 @implementation NSString (Serializable)
 
-- (NSString *)serialize
+- (NSData *)serialize
 {
-    return self;
+    return [self dataUsingEncoding:NSUTF8StringEncoding];
 }
 
-+ (NSString *)deserialize:(NSString *)string
++ (NSString *)deserialize:(NSData *)data
 {
-    return string;
+    return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 }
 
 @end

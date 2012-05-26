@@ -11,16 +11,16 @@
  */
 @protocol OKVSerializable <NSObject>
 /**
- * Creates an NSString representation of the current object that can
+ * Creates an NSData representation of the current object that can
  * later be parsed using deserialize:.
- * @return An UTF-8 encoded NSString.
+ * @return A blob of binary data.
  */
-- (NSString *)serialize;
+- (NSData *)serialize;
 
 /**
- * Parses an NSString into an instance of the current class.
- * @param string An UTF-8 encoded string, that was probably generated using serialize.
+ * Parses an NSData into an instance of the current class.
+ * @param data A binary blob of data that was probably generated using serialize.
  * @return An instance of the current class.
  */
-+ (id)deserialize:(NSString *)string;
++ (id<OKVSerializable>)deserialize:(NSData *)data;
 @end

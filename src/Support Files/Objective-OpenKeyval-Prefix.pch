@@ -8,7 +8,6 @@
 #endif
 
 #import "OKVStore_Private.h"
-#import "NSString+Serializable.h"
 #import "OKVExceptions.h"
 #import "OKVConnectionHelper.h"
 

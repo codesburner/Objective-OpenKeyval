@@ -74,7 +74,7 @@
     if (rawData == nil)
         return nil;
     else
-        return [class deserialize:[NSString stringWithUTF8String:rawData.bytes]];
+        return [class deserialize:rawData];
 }
 
 - (BOOL)deleteKey:(NSString *)key
