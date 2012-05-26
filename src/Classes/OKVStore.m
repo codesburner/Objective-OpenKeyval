@@ -112,6 +112,10 @@
                               synchronous:YES 
                                  callback:OKVSimpleConnectionCallback(nil)];
 }
+
+- (void)putItem:(id<OKVSerializable>)item atKey:(NSString *)key
+{
+    [self putData:[item serialize] atKey:key];
 }
 
 #pragma mark Extension Implementation

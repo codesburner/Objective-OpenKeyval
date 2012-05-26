@@ -14,7 +14,13 @@ int main(void)
         NSString *testKey = (NSString *)[store getItemAtKey:@"testKey" ofClass:[NSString class]];
         NSLog(@"Value of testKey: %@", testKey);
         
-        BOOL data = [store deleteKey:@"thatKeyDoesNotExist"];
+        NSString *nonExistentKey = @"thatKeyDoesNotExist";
+        
+        BOOL data = [store deleteKey:nonExistentKey];
+        NSLog(@"Value of thatKeyDoesNotExist: %@", data ? @"YES" : @"NO");
+        
+        [store putItem:testKey atKey:nonExistentKey];
+        data = [store deleteKey:nonExistentKey];
         NSLog(@"Value of thatKeyDoesNotExist: %@", data ? @"YES" : @"NO");
     }
     exit(EXIT_SUCCESS);
