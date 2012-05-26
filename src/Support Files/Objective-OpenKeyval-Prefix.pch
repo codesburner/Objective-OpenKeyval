@@ -10,5 +10,6 @@
 #import "OKVStore_Private.h"
 #import "OKVExceptions.h"
 #import "OKVConnectionHelper.h"
+#import "NSData+URLEncode.h"
 
 #define stringWithFormat(format, args...)    [NSString stringWithFormat:(format), ## args]
