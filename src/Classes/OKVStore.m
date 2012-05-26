@@ -51,7 +51,7 @@
 - (NSData *)getItemAtKey:(NSString *)key
 {
     [self assertKeyIsValid:key];
-    
+
     __block NSData *result;
     OKVDataCallback block = ^(int statusCode, NSData *data) {
         if (statusCode == 200)
@@ -59,13 +59,13 @@
         else
             result = nil;
     };
-    
+
     [OKVConnectionHelper sendRequestToURL:[NSURL URLWithString:key relativeToURL:storeURL]
                                withMethod:@"GET"
                                   timeOut:kOKVTimeout
                               synchronous:YES
                                  callback:OKVSimpleConnectionCallback(block)];
-        
+
     return result;
 }
 
@@ -81,7 +81,7 @@
 - (BOOL)deleteKey:(NSString *)key
 {
     [self assertKeyIsValid:key];
-    
+
     __block NSData *result;
     OKVDataCallback block = ^(int statusCode, NSData *data) {
         if (statusCode == 200)
@@ -105,11 +105,11 @@
     [self assertKeyIsValid:key];
 
     [OKVConnectionHelper sendRequestToURL:storeURL
-                               withMethod:@"POST" 
+                               withMethod:@"POST"
                                bodyString:stringWithFormat(@"%@=%@", key, [data urlEncode])
-                              contentType:kOKVContentType 
-                                  timeOut:kOKVTimeout 
-                              synchronous:YES 
+                              contentType:kOKVContentType
+                                  timeOut:kOKVTimeout
+                              synchronous:YES
                                  callback:OKVSimpleConnectionCallback(nil)];
 }
 

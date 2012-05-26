@@ -28,13 +28,13 @@ OKVConnectionCallback OKVSimpleConnectionCallback(OKVDataCallback dataCallback)
     return nil;
 }
 
-+ (void)sendRequestToURL:(NSURL *)url 
-              withMethod:(NSString *)method 
-                 timeOut:(NSTimeInterval)timeOut 
-             synchronous:(BOOL)synchronous 
++ (void)sendRequestToURL:(NSURL *)url
+              withMethod:(NSString *)method
+                 timeOut:(NSTimeInterval)timeOut
+             synchronous:(BOOL)synchronous
                 callback:(OKVConnectionCallback)block
 {
-    [self sendRequestToURL:url 
+    [self sendRequestToURL:url
                 withMethod:method
                requestBody:nil
                contentType:nil
@@ -43,15 +43,15 @@ OKVConnectionCallback OKVSimpleConnectionCallback(OKVDataCallback dataCallback)
                   callback:block];
 }
 
-+ (void)sendRequestToURL:(NSURL *)url 
-              withMethod:(NSString *)method 
++ (void)sendRequestToURL:(NSURL *)url
+              withMethod:(NSString *)method
               bodyString:(NSString *)bodyString
              contentType:(NSString *)contentType
-                 timeOut:(NSTimeInterval)timeOut 
-             synchronous:(BOOL)synchronous 
+                 timeOut:(NSTimeInterval)timeOut
+             synchronous:(BOOL)synchronous
                 callback:(OKVConnectionCallback)block
 {
-    [self sendRequestToURL:url 
+    [self sendRequestToURL:url
                 withMethod:method
                requestBody:[bodyString dataUsingEncoding:NSUTF8StringEncoding]
                contentType:contentType
@@ -60,16 +60,16 @@ OKVConnectionCallback OKVSimpleConnectionCallback(OKVDataCallback dataCallback)
                   callback:block];
 }
 
-+ (void)sendRequestToURL:(NSURL *)url 
-              withMethod:(NSString *)method 
-             requestBody:(NSData *)requestBody 
-             contentType:(NSString *)contentType 
-                 timeOut:(NSTimeInterval)timeOut 
-             synchronous:(BOOL)synchronous 
++ (void)sendRequestToURL:(NSURL *)url
+              withMethod:(NSString *)method
+             requestBody:(NSData *)requestBody
+             contentType:(NSString *)contentType
+                 timeOut:(NSTimeInterval)timeOut
+             synchronous:(BOOL)synchronous
                 callback:(OKVConnectionCallback)block
 {
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url 
-                                                           cachePolicy:NSURLCacheStorageNotAllowed 
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url
+                                                           cachePolicy:NSURLCacheStorageNotAllowed
                                                        timeoutInterval:timeOut];
     request.HTTPMethod = method;
     if (requestBody != nil)
@@ -78,10 +78,10 @@ OKVConnectionCallback OKVSimpleConnectionCallback(OKVDataCallback dataCallback)
         [request setValue:contentType forHTTPHeaderField:@"Content-Type"];
     NSHTTPURLResponse *response = nil;
     NSError *error = nil;
-    
+
     if (synchronous) {
-        NSData * responseData = [NSURLConnection sendSynchronousRequest:request 
-                                                      returningResponse:&response 
+        NSData * responseData = [NSURLConnection sendSynchronousRequest:request
+                                                      returningResponse:&response
                                                                   error:&error];
         block(response, responseData, error);
     } else {

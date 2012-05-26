@@ -12,26 +12,26 @@ inline OKVConnectionCallback OKVSimpleConnectionCallback(OKVDataCallback dataCal
 
 @interface OKVConnectionHelper : NSObject
 
-+ (void)sendRequestToURL:(NSURL *)url 
-              withMethod:(NSString *)method 
-                 timeOut:(NSTimeInterval)timeOut 
-             synchronous:(BOOL)synchronous 
++ (void)sendRequestToURL:(NSURL *)url
+              withMethod:(NSString *)method
+                 timeOut:(NSTimeInterval)timeOut
+             synchronous:(BOOL)synchronous
                 callback:(OKVConnectionCallback)block;
 
-+ (void)sendRequestToURL:(NSURL *)url 
-              withMethod:(NSString *)method 
++ (void)sendRequestToURL:(NSURL *)url
+              withMethod:(NSString *)method
               bodyString:(NSString *)bodyString
              contentType:(NSString *)contentType
-                 timeOut:(NSTimeInterval)timeOut 
-             synchronous:(BOOL)synchronous 
+                 timeOut:(NSTimeInterval)timeOut
+             synchronous:(BOOL)synchronous
                 callback:(OKVConnectionCallback)block;
 
-+ (void)sendRequestToURL:(NSURL *)url 
-              withMethod:(NSString *)method 
++ (void)sendRequestToURL:(NSURL *)url
+              withMethod:(NSString *)method
              requestBody:(NSData *)requestBody
              contentType:(NSString *)contentType
-                 timeOut:(NSTimeInterval)timeOut 
-             synchronous:(BOOL)synchronous 
+                 timeOut:(NSTimeInterval)timeOut
+             synchronous:(BOOL)synchronous
                 callback:(OKVConnectionCallback)block;
 
 

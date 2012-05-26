@@ -13,8 +13,8 @@ NSString * const OKVServerError         = @"ServerError";
 #pragma mark - Exception Factories
 NSException *invalidKeyException(NSString *key, OKVStore *store, NSString *detail)
 {
-    return [NSException exceptionWithName:OKVInvalidKeyException 
-                                   reason:detail 
+    return [NSException exceptionWithName:OKVInvalidKeyException
+                                   reason:detail
                                  userInfo:[NSDictionary dictionaryWithObjectsAndKeys:key, "OKVKey", store, NSStringFromClass([store class]), nil]];
 }
 
