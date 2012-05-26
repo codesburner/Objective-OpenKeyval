@@ -81,9 +81,24 @@
 - (BOOL)deleteKey:(NSString *)key
 {
     [self assertKeyIsValid:key];
-    NSData *data = [self httpPost:@"" toPath:key];
-    NSDictionary *jsonData = [[JSONDecoder new] objectWithData:data];
-    return [[jsonData valueForKey:@"status"] isEqualToString:@"removed"];
+    
+    __block NSData *result;
+    OKVDataCallback block = ^(int statusCode, NSData *data) {
+        if (statusCode == 200)
+            result = data;
+        else
+            result = nil;
+    };
+    [OKVConnectionHelper sendRequestToURL:[NSURL URLWithString:key relativeToURL:storeURL]
+                               withMethod:@"POST"
+                              requestBody:[@"data=" dataUsingEncoding:NSUTF8StringEncoding]
+                              contentType:kOKVContentType
+                                  timeOut:kOKVTimeout
+                              synchronous:YES
+                                 callback:OKVSimpleConnectionCallback(block)];
+    NSDictionary *jsonData = [[JSONDecoder new] objectWithData:result];
+    return [[jsonData valueForKey:@"status"] isEqualToString:@"deleted"];
+}
 
 - (void)putData:(NSData *)data atKey:(NSString *)key
 {
@@ -108,67 +123,6 @@
         @throw invalidKeyException(key, self, stringWithFormat(@"Key \"%@\" should be at most %i characters long.", key, kOKVMaxKeySize));
     if ([key rangeOfCharacterFromSet:keyForbiddenCharset].location != NSNotFound)
         @throw invalidKeyException(key, self, stringWithFormat(@"Key \"%@\" can only contain characters within \"%@\".", key, kOKVAllowedKeyChars));
-}
-
-- (NSData *)httpPost:(NSDictionary *)formData
-{
-    NSMutableString *postData = [NSMutableString new];
-    for (NSString *key in formData) {
-        if ([postData length] > 0)
-            [postData appendString:@"&"];
-        id value = [formData valueForKey:key];
-        if (![value conformsToProtocol:@protocol(OKVSerializable)]) {
-            @throw [NSException exceptionWithName:NSInvalidArgumentException
-                                           reason:@"Values of the dictionary are expected to conform to OKVSerializable." 
-                                         userInfo:[NSDictionary dictionaryWithObjectsAndKeys:formData, @"NSDictionary", key, @"key", value, @"value", nil]];
-        }
-        NSString *valueString = [((id<OKVSerializable>)value) serialize];
-
-        [postData appendFormat:@"%@=%@", [key stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
-                                         [valueString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-    }
-
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:storeURL 
-                                                           cachePolicy:NSURLCacheStorageNotAllowed 
-                                                       timeoutInterval:kOKVTimeout];
-    [request setHTTPMethod:@"POST"];
-    [request setValue:@"application/x-www-form-urlencoded; charset=urf-8" forHTTPHeaderField:@"Content-Type"];
-    [request setHTTPBody:[postData dataUsingEncoding:NSUTF8StringEncoding]];
-
-    NSHTTPURLResponse *response = nil;
-    NSError *error = nil;
-    NSData *responseData = [NSURLConnection sendSynchronousRequest:request 
-                                                 returningResponse:&response 
-                                                             error:&error];
-    if (error != nil)
-        @throw [NSException exceptionWithName:OKVTransportError
-                                       reason:error.description
-                                     userInfo:[NSDictionary dictionaryWithObject:error forKey:@"NSError"]];
-
-    return responseData;
-}
-
-- (NSData *)httpPost:(id<OKVSerializable>)data toPath:(NSString *)path
-{
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:path relativeToURL:storeURL] 
-                                                           cachePolicy:NSURLCacheStorageNotAllowed 
-                                                       timeoutInterval:kOKVTimeout];
-    [request setHTTPMethod:@"POST"];
-    [request setValue:@"application/x-www-form-urlencoded; charset=urf-8" forHTTPHeaderField:@"Content-Type"];
-    [request setHTTPBody:[stringWithFormat(@"data=%@", [data serialize]) dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    NSHTTPURLResponse *response = nil;
-    NSError *error = nil;
-    NSData *responseData = [NSURLConnection sendSynchronousRequest:request 
-                                                 returningResponse:&response 
-                                                             error:&error];
-    if (error != nil)
-        @throw transportErrorException(error);
-    
-    if (response.statusCode != 200)
-        @throw serverErrorException(response, responseData);
-    
-    return responseData;
 }
 
 @end
