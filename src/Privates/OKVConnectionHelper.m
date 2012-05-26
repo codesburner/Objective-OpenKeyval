@@ -14,7 +14,8 @@ OKVConnectionCallback OKVSimpleConnectionCallback(OKVDataCallback dataCallback)
         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
         if (httpResponse.statusCode != 200 && httpResponse.statusCode != 404)
             @throw serverErrorException(httpResponse, data);
-        dataCallback(httpResponse.statusCode, data);
+        if(dataCallback != nil)
+            dataCallback(httpResponse.statusCode, data);
     };
     return [callbackBlock copy];
 }
@@ -37,6 +38,23 @@ OKVConnectionCallback OKVSimpleConnectionCallback(OKVDataCallback dataCallback)
                 withMethod:method
                requestBody:nil
                contentType:nil
+                   timeOut:timeOut
+               synchronous:synchronous
+                  callback:block];
+}
+
++ (void)sendRequestToURL:(NSURL *)url 
+              withMethod:(NSString *)method 
+              bodyString:(NSString *)bodyString
+             contentType:(NSString *)contentType
+                 timeOut:(NSTimeInterval)timeOut 
+             synchronous:(BOOL)synchronous 
+                callback:(OKVConnectionCallback)block
+{
+    [self sendRequestToURL:url 
+                withMethod:method
+               requestBody:[bodyString dataUsingEncoding:NSUTF8StringEncoding]
+               contentType:contentType
                    timeOut:timeOut
                synchronous:synchronous
                   callback:block];

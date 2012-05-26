@@ -20,6 +20,14 @@ inline OKVConnectionCallback OKVSimpleConnectionCallback(OKVDataCallback dataCal
 
 + (void)sendRequestToURL:(NSURL *)url 
               withMethod:(NSString *)method 
+              bodyString:(NSString *)bodyString
+             contentType:(NSString *)contentType
+                 timeOut:(NSTimeInterval)timeOut 
+             synchronous:(BOOL)synchronous 
+                callback:(OKVConnectionCallback)block;
+
++ (void)sendRequestToURL:(NSURL *)url 
+              withMethod:(NSString *)method 
              requestBody:(NSData *)requestBody
              contentType:(NSString *)contentType
                  timeOut:(NSTimeInterval)timeOut 
